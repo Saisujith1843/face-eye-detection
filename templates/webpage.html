@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face and Eye Detection in Flask using OpenCV</title>
+</head>
+<body>
+    <h1>Face and Eye Detection in Flask using OpenCV</h1>
+    <h2>Upload a clarity image</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Detect">
+    </form>
+    {% if request.method == 'POST' %}
+        <h2>Detected Image</h2>
+        <img src="{{ url_for('static', filename='detected.jpg') }}" width="400" height="400">
+    {% endif %}
+</body>
+</html>
